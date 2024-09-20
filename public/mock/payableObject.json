@@ -1,0 +1,43 @@
+{
+  "@context": "/.../contexts/PayableObject",
+  "@id": "/.../payable_objects/13308",
+  "@type": "PayableObject",
+  "id": 13308,
+  "contactId": "/.../contacts/2950313",
+  "amount": 100,
+  "currency": "EUR",
+  "redirectUrl": "",
+  "token": "pi_3Q11v3PqBuM1Ivvu2st6rwrq_secret_LEwVayBuaqE21VPIWl5i60nJa",
+  "externalReference": "pi_3Q11v3PqBuM1Ivvu2st6rwrq",
+  "clubId": "/.../clubs/1341",
+  "clubCode": "SAN",
+  "checkout": "/.../checkouts/1304",
+  "webWallet": {
+    "@id": "/.../web_wallets/76119",
+    "@type": "WebWallet",
+    "useInRejects": false,
+    "token": "seti_1PucFpPqBuM1Ivvu8PrwJuR5_secret_QmAbnXW4vqCYlZ6VX4mYmSIDibYWOF6"
+  },
+  "payableObjects": {
+    "sales": [
+      "/.../sales/3545520"
+    ]
+  },
+  "webRedirectUrl": null,
+  "state": "requested",
+  "logs": [
+    "requires_payment_method : ",
+    "State: requires_payment_method / paymentMethod: ",
+    "Unknown state : requires_payment_method",
+    "State: requires_payment_method / paymentMethod: ",
+    "Unknown state : requires_payment_method",
+    "State: requires_payment_method / paymentMethod: ",
+    "Unknown state : requires_payment_method"
+  ],
+  "payment": null,
+  "useAvailableAmount": false,
+  "createdAt": "2024-09-20T10:10:24",
+  "createdBy": "Jessy Lenne <jessy.lenne@stadline.com>",
+  "canceledAt": null,
+  "canceledBy": null
+}
