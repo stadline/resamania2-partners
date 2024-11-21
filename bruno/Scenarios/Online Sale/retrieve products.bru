@@ -1,0 +1,22 @@
+meta {
+  name: retrieve products
+  type: http
+  seq: 6
+}
+
+get {
+  url: https://{{host}}/{{clientToken}}/products
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+  x-user-network-node-id: {{networkNodeId}}
+  x-user-club-id: {{clubId}}
+}
+
+vars:post-response {
+  productId: res.body["hydra:member"]?.[4]?.["@id"]
+  offerId: res.body["hydra:member"]?.[4]?.["@id"]
+}

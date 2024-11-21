@@ -1,0 +1,21 @@
+meta {
+  name: retrieve payments checkouts
+  type: http
+  seq: 11
+}
+
+get {
+  url: https://{{host}}/{{clientToken}}/checkouts
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+  x-user-network-node-id: {{networkNodeId}}
+  x-user-club-id: {{clubId}}
+}
+
+vars:post-response {
+  checkoutId: res.body["hydra:member"]?.[0]?.["@id"]
+}

@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Resamania API",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

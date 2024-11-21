@@ -1,0 +1,21 @@
+meta {
+  name: retrieve club's code
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://{{host}}{{clubId}}
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+  x-user-network-node-id: {{networkNodeId}}
+  x-user-club-id: {{clubId}}
+}
+
+vars:post-response {
+  clubCode: res.body?.code
+}

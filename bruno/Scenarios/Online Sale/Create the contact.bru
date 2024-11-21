@@ -1,0 +1,50 @@
+meta {
+  name: Create the contact
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://{{host}}/{{clientToken}}/contacts
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+  x-user-network-node-id: {{networkNodeId}}
+  x-user-club-id: {{clubId}}
+}
+
+body:json {
+  {
+    "familyName":"DEV",
+    "givenName":"Test",
+    "gender":"male",
+    "birthDate":"2000-01-01",
+    "email": "{{fakeEmail}}",
+    "mobile":"+33626082779",
+    "sourceId": "/venicegym/referentials/sources/109797",
+    "address": {
+      "addressCountry":"France",
+      "addressLocality":"Toulon",
+      "streetAddress":"52 chemin du test",
+      "postalCode":"83390"
+    }
+  }
+}
+
+body:multipart-form {
+  grant_type: client_credentials
+  client_id: {{clientId}}
+  client_secret: {{clientSecret}}
+}
+
+vars:post-response {
+  contactId: res.body?.["@id"]
+  contactNumber: res.body?.number
+}
+
+script:pre-request {
+  bru.setVar("fakeEmail", `test+${Math.round(Math.random()*10000)}@gmail.com`);
+}

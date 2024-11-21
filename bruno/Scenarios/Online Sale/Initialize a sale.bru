@@ -1,0 +1,44 @@
+meta {
+  name: Initialize a sale
+  type: http
+  seq: 8
+}
+
+post {
+  url: https://{{host}}/{{clientToken}}/sales
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+  x-user-network-node-id: {{networkNodeId}}
+  x-user-club-id: {{clubId}}
+}
+
+body:json {
+  {
+    "contactId": "{{contactId}}",
+    "contactNumber": "{{contactNumber}}",
+    "contactGivenName":"Test",
+    "contactFamilyName":"DEV",
+    "clubId" : "{{clubId}}",
+    "clubCode": "{{clubCode}}",
+    "address": {
+      "addressCountry":"France",
+      "addressLocality":"Toulon",
+      "streetAddress":"52 chemin du test",
+      "postalCode":"83390"
+    }
+  }
+}
+
+body:multipart-form {
+  grant_type: client_credentials
+  client_id: {{clientId}}
+  client_secret: {{clientSecret}}
+}
+
+vars:post-response {
+  saleId: res.body?.["@id"]
+}

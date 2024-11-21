@@ -1,0 +1,42 @@
+meta {
+  name: Retrieve payment's status
+  type: http
+  seq: 13
+}
+
+put {
+  url: https://{{host}}{{payableObjectId}}/check
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+  x-user-network-node-id: {{networkNodeId}}
+  x-user-club-id: {{clubId}}
+}
+
+body:json {
+  {
+    "contactId": "{{contactId}}",
+    "amount": {{saleAmount}},
+    "currency":"EUR",
+    "clubId": "{{clubId}}",
+    "clubCode": "{{clubCode}}",
+    "checkout":"{{checkoutId}}",
+    "payableObjects":{
+      "sales":[
+        "{{saleId}}"
+      ]
+    },
+    "useAvailableAmount": false,
+    "cancelUrl": "https://cancel.url",
+    "validUrl": "https://valid.url"
+  }
+}
+
+body:multipart-form {
+  grant_type: client_credentials
+  client_id: {{clientId}}
+  client_secret: {{clientSecret}}
+}

@@ -1,0 +1,25 @@
+{
+  "@context": "/.../contexts/Checkout",
+  "@id": "/.../checkouts/1304",
+  "@type": "Checkout",
+  "clubId": "/.../clubs/1341",
+  "clubCode": "SAN",
+  "name": "Caisse Principale",
+  "alertLimitMin": null,
+  "alertEmail": null,
+  "createdAt": "2023-08-30T11:34:13",
+  "createdBy": "Consumer",
+  "deletedAt": null,
+  "deletedBy": null,
+  "totalCashAmount": 0,
+  "webPaymentProviderType": "stripe",
+  "paymentProviderConfiguration": {
+    "@id": "/.../stripe_configurations/2163",
+    "@type": "StripeConfiguration",
+    "publicKey": "pk_test_51JX5Z4LanmA9Pcv3vDu2043dRuCkx37QkgdctiqP12diCbktLMYQ7PWVu5ooTK5ZRixS7faHz0cC5YZcg8fuXOvw00GyNEVpdp",
+    "accountId": "acct_1KMvhJPqBuM1Ivvu"
+  },
+  "useCardInRejects": "default_off",
+  "currency": "EUR",
+  "theoreticalCheckoutAmount": 5346
+}
