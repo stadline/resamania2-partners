@@ -1,0 +1,20 @@
+meta {
+  name: Get an Offer
+  type: http
+  seq: 3
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/offers/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

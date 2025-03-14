@@ -1,0 +1,20 @@
+meta {
+  name: Get remaining amount after transformation
+  type: http
+  seq: 20
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/sales/:id/transformation_remaining_amount
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

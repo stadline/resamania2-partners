@@ -1,0 +1,20 @@
+meta {
+  name: Get a class event
+  type: http
+  seq: 4
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/class_events/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

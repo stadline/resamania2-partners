@@ -1,0 +1,25 @@
+meta {
+  name: List no show scenarios
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/no_show_scenarios
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~order[name]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

@@ -1,0 +1,28 @@
+meta {
+  name: List identificator whitelists
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/identificator_whitelists
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~externalNumber: 
+  ~externalNumber[]: 
+  ~type: 
+  ~type[]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Connect with API OAuth Token
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: //oauth/v2/token
+  body: none
+  auth:bearer
+}

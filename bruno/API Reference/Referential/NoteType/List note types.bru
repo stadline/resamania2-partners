@@ -1,0 +1,27 @@
+meta {
+  name: List note types
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/referentials/note_types
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~name: 
+  ~name[]: 
+  ~archived: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

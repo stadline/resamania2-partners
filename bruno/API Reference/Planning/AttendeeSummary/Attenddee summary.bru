@@ -1,0 +1,25 @@
+meta {
+  name: Attenddee summary
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/attendee_summary
+  body: none
+  auth:bearer
+}
+
+params:query {
+  contact: 
+  ~lastAttendeesLimit: 
+  ~nextAttendeesLimit: 
+}
+
+params:path {
+  client_token: 
+}

@@ -1,0 +1,21 @@
+meta {
+  name: Get widget of attendance
+  type: http
+  seq: 4
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/public/attendances/:slug/:mode
+  body: none
+  auth:bearer
+}
+
+params:path {
+  slug: 
+  mode: 
+  client_token: 
+}

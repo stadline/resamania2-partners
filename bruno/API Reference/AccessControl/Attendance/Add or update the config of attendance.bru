@@ -1,0 +1,19 @@
+meta {
+  name: Add or update the config of attendance
+  type: http
+  seq: 3
+}
+
+auth:bearer {
+  token: {{memberJwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/attendances/config
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

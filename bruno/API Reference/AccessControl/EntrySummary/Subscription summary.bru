@@ -1,0 +1,24 @@
+meta {
+  name: Subscription summary
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/entry_summary
+  body: none
+  auth:bearer
+}
+
+params:query {
+  contact: 
+  ~lastEntriesLimit: 
+}
+
+params:path {
+  client_token: 
+}

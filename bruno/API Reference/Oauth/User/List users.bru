@@ -1,0 +1,33 @@
+meta {
+  name: List users
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/users
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~givenName: 
+  ~familyName: 
+  ~email: 
+  ~active: 
+  ~role: 
+  ~clubId: 
+  ~q: 
+  ~networkNodeId: 
+  ~archived: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

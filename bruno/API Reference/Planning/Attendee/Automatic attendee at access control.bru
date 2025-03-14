@@ -1,0 +1,19 @@
+meta {
+  name: Automatic attendee at access control
+  type: http
+  seq: 9
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/booking/automatic_attendee_access_control
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

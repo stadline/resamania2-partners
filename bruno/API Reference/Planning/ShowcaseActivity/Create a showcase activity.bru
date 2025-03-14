@@ -1,0 +1,19 @@
+meta {
+  name: Create a showcase activity
+  type: http
+  seq: 3
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/showcase_activities
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

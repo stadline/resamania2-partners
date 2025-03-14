@@ -1,0 +1,25 @@
+meta {
+  name: List occupations
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/referentials/occupations
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~archived: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

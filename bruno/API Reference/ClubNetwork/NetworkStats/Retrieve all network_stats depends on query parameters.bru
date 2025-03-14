@@ -1,0 +1,35 @@
+meta {
+  name: Retrieve all network_stats depends on query parameters
+  type: http
+  seq: 3
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/network_stats
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~entityGroup: 
+  ~entityGroup[]: 
+  ~networkNodeId: 
+  ~networkNodeId[]: 
+  ~networkOwnerId: 
+  ~networkOwnerId[]: 
+  ~clientToken: 
+  ~clientToken[]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  undefined: 
+  undefined: 
+  undefined: 
+  client_token: 
+}

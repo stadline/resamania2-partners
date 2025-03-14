@@ -1,0 +1,19 @@
+meta {
+  name: Add a coach
+  type: http
+  seq: 3
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/coaches
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

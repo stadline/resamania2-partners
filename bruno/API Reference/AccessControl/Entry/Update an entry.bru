@@ -1,0 +1,16 @@
+meta {
+  name: Update an entry
+  type: http
+  seq: 4
+}
+
+put {
+  url: https://{{host}}/{{environment}}/{{client_token}}/entries/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

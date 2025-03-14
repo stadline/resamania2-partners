@@ -1,0 +1,28 @@
+meta {
+  name: List of studios accessible by shared club network
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/club_network/studios
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~club: 
+  ~club[]: 
+  ~order[name]: 
+  ~archived: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Calculate network_stats
+  type: http
+  seq: 4
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/network_stats
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

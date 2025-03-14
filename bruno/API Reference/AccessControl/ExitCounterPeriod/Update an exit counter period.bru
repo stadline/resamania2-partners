@@ -1,0 +1,16 @@
+meta {
+  name: Update an exit counter period
+  type: http
+  seq: 4
+}
+
+put {
+  url: https://{{host}}/{{environment}}/{{client_token}}/exit_counter_periods/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

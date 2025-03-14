@@ -1,0 +1,25 @@
+meta {
+  name: Get Resabox
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/boxes
+  body: none
+  auth:bearer
+}
+
+params:query {
+  clubId: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

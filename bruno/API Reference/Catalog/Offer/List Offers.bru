@@ -1,0 +1,65 @@
+meta {
+  name: List Offers
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/offers
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~renewal: 
+  ~context[club]: 
+  ~context[role]: 
+  ~context[contactTags][]: 
+  ~context[debt]: 
+  ~context[date]: 
+  ~context[productSubscription]: 
+  ~context[sellingDay]: 
+  ~context[includeExceededQuota]: 
+  ~context[channel]: 
+  ~context[contactId]: 
+  ~context[contactState]: 
+  ~context[contactAge]: 
+  ~context[showSpecialOptions]: 
+  ~context[isTransformationRelated]: 
+  ~product: 
+  ~product[]: 
+  ~product.type: 
+  ~product.type[]: 
+  ~type: 
+  ~type[]: 
+  ~name: 
+  ~name[]: 
+  ~showcaseProducts.context: 
+  ~showcaseProducts.context[]: 
+  ~isHighlighted: 
+  ~context[club]: 
+  ~context[role]: 
+  ~context[contactTags][]: 
+  ~context[debt]: 
+  ~context[date]: 
+  ~context[productSubscription]: 
+  ~context[sellingDay]: 
+  ~context[includeExceededQuota]: 
+  ~context[channel]: 
+  ~context[contactId]: 
+  ~context[contactState]: 
+  ~context[contactAge]: 
+  ~context[showSpecialOptions]: 
+  ~context[isTransformationRelated]: 
+  ~order[totalSales]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

@@ -1,0 +1,16 @@
+meta {
+  name: Update late cancel scenario
+  type: http
+  seq: 4
+}
+
+put {
+  url: https://{{host}}/{{environment}}/{{client_token}}/late_cancel_scenarios/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

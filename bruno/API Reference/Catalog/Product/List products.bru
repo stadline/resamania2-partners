@@ -1,0 +1,49 @@
+meta {
+  name: List products
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/products
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~q: 
+  ~hasBehavior: 
+  ~context[club]: 
+  ~context[role]: 
+  ~context[contactTags][]: 
+  ~context[debt]: 
+  ~context[date]: 
+  ~context[productSubscription]: 
+  ~context[sellingDay]: 
+  ~context[includeExceededQuota]: 
+  ~context[channel]: 
+  ~context[contactId]: 
+  ~context[contactState]: 
+  ~context[contactAge]: 
+  ~context[showSpecialOptions]: 
+  ~context[isTransformationRelated]: 
+  ~type: 
+  ~type[]: 
+  ~productGroup.name: 
+  ~productGroup: 
+  ~productGroup[]: 
+  ~variant: 
+  ~variant[]: 
+  ~order[name]: 
+  ~exists[variant]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

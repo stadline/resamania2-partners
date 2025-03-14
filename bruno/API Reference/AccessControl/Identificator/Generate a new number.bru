@@ -1,0 +1,17 @@
+meta {
+  name: Generate a new number
+  type: http
+  seq: 6
+}
+
+put {
+  url: https://{{host}}/{{environment}}/{{client_token}}/identificators/:id/generate
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  id: 
+  client_token: 
+}

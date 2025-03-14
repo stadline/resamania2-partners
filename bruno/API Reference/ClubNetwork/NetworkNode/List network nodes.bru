@@ -1,0 +1,30 @@
+meta {
+  name: List network nodes
+  type: http
+  seq: 4
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/network_nodes
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~clubId: 
+  ~clubId[]: 
+  ~alias: 
+  ~alias[]: 
+  ~name: 
+  ~q: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

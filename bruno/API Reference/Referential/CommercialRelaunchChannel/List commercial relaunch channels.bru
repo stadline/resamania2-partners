@@ -1,0 +1,25 @@
+meta {
+  name: List commercial relaunch channels
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/referentials/commercial_relaunch_channels
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~archived: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

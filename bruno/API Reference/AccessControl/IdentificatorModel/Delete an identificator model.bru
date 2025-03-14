@@ -1,0 +1,16 @@
+meta {
+  name: Delete an identificator model
+  type: http
+  seq: 4
+}
+
+delete {
+  url: https://{{host}}/{{environment}}/{{client_token}}/identificator_models/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

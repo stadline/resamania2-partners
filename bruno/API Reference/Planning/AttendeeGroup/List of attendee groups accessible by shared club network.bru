@@ -1,0 +1,35 @@
+meta {
+  name: List of attendee groups accessible by shared club network
+  type: http
+  seq: 5
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/club_network/attendee_groups
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~contactId: 
+  ~contactId[]: 
+  ~startedAt[before]: 
+  ~startedAt[strictly_before]: 
+  ~startedAt[after]: 
+  ~startedAt[strictly_after]: 
+  ~endedAt[before]: 
+  ~endedAt[strictly_before]: 
+  ~endedAt[after]: 
+  ~endedAt[strictly_after]: 
+  ~order[createdAt]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

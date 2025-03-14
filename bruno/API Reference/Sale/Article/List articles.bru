@@ -1,0 +1,55 @@
+meta {
+  name: List articles
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/articles
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~q: 
+  ~totalTI: 
+  ~sale.contactId: 
+  ~sale.contactId[]: 
+  ~sale.createdBy: 
+  ~sale.clubId: 
+  ~sale.clubId[]: 
+  ~sale.invoiceReference: 
+  ~productName: 
+  ~productType: 
+  ~productType[]: 
+  ~offerName: 
+  ~sale.channel: 
+  ~sale.channel[]: 
+  ~sale: 
+  ~sale[]: 
+  ~sale.state: 
+  ~sale.state[]: 
+  ~sale.createdAt: 
+  ~sale.createdAt[before]: 
+  ~sale.createdAt[strictly_before]: 
+  ~sale.createdAt[after]: 
+  ~sale.createdAt[strictly_after]: 
+  ~sale.updatedAt[before]: 
+  ~sale.updatedAt[strictly_before]: 
+  ~sale.updatedAt[after]: 
+  ~sale.updatedAt[strictly_after]: 
+  ~order[id]: 
+  ~order[sale.createdAt]: 
+  ~order[sale.contactFamilyName]: 
+  ~order[sale.contactGivenName]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

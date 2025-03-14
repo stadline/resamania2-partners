@@ -1,0 +1,45 @@
+meta {
+  name: List goodwill gestures
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/goodwill_gestures
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~createdAt[before]: 
+  ~createdAt[strictly_before]: 
+  ~createdAt[after]: 
+  ~createdAt[strictly_after]: 
+  ~contactId: 
+  ~contactId[]: 
+  ~createdBy: 
+  ~createdAt: 
+  ~createdAt[]: 
+  ~behavior: 
+  ~behavior[]: 
+  ~reasonId: 
+  ~reasonId[]: 
+  ~clubId: 
+  ~clubId[]: 
+  ~order[createdAt]: 
+  ~q: 
+  ~implementation[saleId]: 
+  ~implementation[articleId]: 
+  ~implementation[hasArticles]: 
+  ~implementation[isAutomatic]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

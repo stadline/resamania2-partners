@@ -1,0 +1,30 @@
+meta {
+  name: getContactLastEntryCollection
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/contact_last_entries
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~date[before]: 
+  ~date[strictly_before]: 
+  ~date[after]: 
+  ~date[strictly_after]: 
+  ~contactId: 
+  ~contactId[]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

@@ -1,0 +1,16 @@
+meta {
+  name: Link ProductFamily with a list of product codes
+  type: http
+  seq: 6
+}
+
+put {
+  url: https://{{host}}/{{environment}}/{{client_token}}/product_families/:id/link
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

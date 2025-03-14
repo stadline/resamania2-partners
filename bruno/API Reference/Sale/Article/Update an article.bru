@@ -1,0 +1,16 @@
+meta {
+  name: Update an article
+  type: http
+  seq: 4
+}
+
+put {
+  url: https://{{host}}/{{environment}}/{{client_token}}/articles/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

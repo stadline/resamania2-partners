@@ -1,0 +1,16 @@
+meta {
+  name: Delete an optin
+  type: http
+  seq: 5
+}
+
+delete {
+  url: https://{{host}}/{{environment}}/{{client_token}}/optins/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

@@ -1,0 +1,20 @@
+meta {
+  name: Transfer a sale from temp contact to contact
+  type: http
+  seq: 19
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/sales/:id/transfer
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

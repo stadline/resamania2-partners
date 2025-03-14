@@ -1,0 +1,43 @@
+meta {
+  name: Get stats of target
+  type: http
+  seq: 6
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/stats/entries/target/:id
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~createdAt[before]: 
+  ~createdAt[strictly_before]: 
+  ~createdAt[after]: 
+  ~createdAt[strictly_after]: 
+  ~crossingPoint: 
+  ~crossingPoint[]: 
+  ~reason: 
+  ~targetId: 
+  ~targetId[]: 
+  ~type: 
+  ~type[]: 
+  ~entryRequest: 
+  ~entryRequest[]: 
+  ~isBlocking: 
+  ~order[createdAt]: 
+  ~q: 
+  ~crossingPoint.clubId: 
+  ~crossingPoint.entryZone: 
+  ~crossingPoint.exitZone: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

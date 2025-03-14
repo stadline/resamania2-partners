@@ -1,0 +1,26 @@
+meta {
+  name: List zones
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/zones
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~clubId: 
+  ~clubId[]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

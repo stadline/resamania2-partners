@@ -1,0 +1,17 @@
+meta {
+  name: Delete a product group without products
+  type: http
+  seq: 5
+}
+
+delete {
+  url: https://{{host}}/{{environment}}/{{client_token}}/product_groups/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  id: 
+  client_token: 
+}

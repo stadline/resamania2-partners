@@ -1,0 +1,27 @@
+meta {
+  name: List note subjects
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/referentials/note_subjects
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~name: 
+  ~name[]: 
+  ~archived: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

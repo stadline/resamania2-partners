@@ -1,0 +1,26 @@
+meta {
+  name: List identificator models
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/identificator_models
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~number: 
+  ~number[]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

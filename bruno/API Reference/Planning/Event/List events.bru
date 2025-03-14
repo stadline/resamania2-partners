@@ -1,0 +1,29 @@
+meta {
+  name: List events
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/events
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~calendars: 
+  ~startedAt: 
+  ~endedAt: 
+  ~itemsPerPage: 
+  ~page: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

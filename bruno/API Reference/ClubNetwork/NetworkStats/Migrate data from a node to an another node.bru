@@ -1,0 +1,19 @@
+meta {
+  name: Migrate data from a node to an another node
+  type: http
+  seq: 1
+}
+
+put {
+  url: https://{{host}}/{{environment}}/{{client_token}}/network_nodes/migrate
+  body: none
+  auth:bearer
+}
+
+params:path {
+  undefined: 
+  undefined: 
+  undefined: 
+  undefined: 
+  client_token: 
+}

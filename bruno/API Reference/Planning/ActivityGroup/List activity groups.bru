@@ -1,0 +1,27 @@
+meta {
+  name: List activity groups
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/activity_groups
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~name: 
+  ~order[name]: 
+  ~type: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

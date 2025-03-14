@@ -1,0 +1,26 @@
+meta {
+  name: List product groups
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/product_groups
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~name: 
+  ~order[name]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

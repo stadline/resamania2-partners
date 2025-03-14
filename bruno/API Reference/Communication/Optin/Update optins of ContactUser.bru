@@ -1,0 +1,21 @@
+meta {
+  name: Update optins of ContactUser
+  type: http
+  seq: 6
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/public/optins
+  body: none
+  auth:bearer
+}
+
+params:path {
+  email: 
+  code: 
+  client_token: 
+}

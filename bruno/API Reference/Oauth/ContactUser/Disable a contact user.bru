@@ -1,0 +1,20 @@
+meta {
+  name: Disable a contact user
+  type: http
+  seq: 7
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/contact_users/:id/disable
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

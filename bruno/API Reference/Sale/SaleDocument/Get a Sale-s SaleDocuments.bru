@@ -1,0 +1,27 @@
+meta {
+  name: Get a Sale-s SaleDocuments
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/sale_documents
+  body: none
+  auth:bearer
+}
+
+params:query {
+  saleId: 
+  ~sale: 
+  ~sale[]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

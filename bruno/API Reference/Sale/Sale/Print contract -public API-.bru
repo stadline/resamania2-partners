@@ -1,0 +1,20 @@
+meta {
+  name: Print contract -public API-
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/public/sales/:slug/contract/print
+  body: none
+  auth:bearer
+}
+
+params:path {
+  slug: 
+  client_token: 
+}

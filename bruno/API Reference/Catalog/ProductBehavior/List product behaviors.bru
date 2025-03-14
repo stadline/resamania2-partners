@@ -1,0 +1,26 @@
+meta {
+  name: List product behaviors
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/product_behaviors
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~product: 
+  ~product[]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

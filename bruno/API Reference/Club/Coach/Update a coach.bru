@@ -1,0 +1,16 @@
+meta {
+  name: Update a coach
+  type: http
+  seq: 5
+}
+
+put {
+  url: https://{{host}}/{{environment}}/{{client_token}}/coaches/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

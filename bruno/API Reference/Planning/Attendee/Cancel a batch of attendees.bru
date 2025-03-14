@@ -1,0 +1,19 @@
+meta {
+  name: Cancel a batch of attendees
+  type: http
+  seq: 4
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/attendees/batch_cancel
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

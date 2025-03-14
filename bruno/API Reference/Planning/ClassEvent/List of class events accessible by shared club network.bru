@@ -1,0 +1,48 @@
+meta {
+  name: List of class events accessible by shared club network
+  type: http
+  seq: 10
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/club_network/class_events
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~club: 
+  ~club[]: 
+  ~coach: 
+  ~coach[]: 
+  ~activity: 
+  ~activity[]: 
+  ~activity.activityGroups: 
+  ~activity.activityGroups[]: 
+  ~studio: 
+  ~studio[]: 
+  ~recurrence: 
+  ~recurrence[]: 
+  ~attendees.contactId: 
+  ~attendees.contactId[]: 
+  ~attendees.state: 
+  ~attendees.state[]: 
+  ~startedAt[before]: 
+  ~startedAt[strictly_before]: 
+  ~startedAt[after]: 
+  ~startedAt[strictly_after]: 
+  ~order[startedAt]: 
+  ~available: 
+  ~time: 
+  ~archived: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

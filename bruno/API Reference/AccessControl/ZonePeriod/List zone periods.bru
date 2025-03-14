@@ -1,0 +1,38 @@
+meta {
+  name: List zone periods
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/zone_periods
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~type: 
+  ~type[]: 
+  ~zoneId: 
+  ~zoneId[]: 
+  ~zoneId.clubId: 
+  ~zoneId.clubId[]: 
+  ~startedAt[before]: 
+  ~startedAt[strictly_before]: 
+  ~startedAt[after]: 
+  ~startedAt[strictly_after]: 
+  ~endedAt[before]: 
+  ~endedAt[strictly_before]: 
+  ~endedAt[after]: 
+  ~endedAt[strictly_after]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

@@ -1,0 +1,16 @@
+meta {
+  name: Unlink ProductFamily of ProductCode
+  type: http
+  seq: 3
+}
+
+put {
+  url: https://{{host}}/{{environment}}/{{client_token}}/referentials/product_codes/:id/unlink_family
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

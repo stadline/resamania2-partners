@@ -1,0 +1,24 @@
+meta {
+  name: List Offer quota
+  type: http
+  seq: 2
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/offer_quotas
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

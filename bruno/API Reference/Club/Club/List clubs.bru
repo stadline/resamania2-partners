@@ -1,0 +1,33 @@
+meta {
+  name: List clubs
+  type: http
+  seq: 2
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/clubs
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~clubTags.name: 
+  ~clubTags.name[]: 
+  ~postalCode: 
+  ~postalCode[]: 
+  ~order[name]: 
+  ~disabledProcess: 
+  ~visibility: 
+  ~withResaboxNotification: 
+  ~q: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

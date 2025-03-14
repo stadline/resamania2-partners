@@ -1,0 +1,20 @@
+meta {
+  name: Get a goodwill gesture
+  type: http
+  seq: 3
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/goodwill_gestures/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

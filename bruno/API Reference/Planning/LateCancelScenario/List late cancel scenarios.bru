@@ -1,0 +1,25 @@
+meta {
+  name: List late cancel scenarios
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/late_cancel_scenarios
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~order[name]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

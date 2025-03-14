@@ -1,0 +1,56 @@
+meta {
+  name: List of attendees accessible by shared club network
+  type: http
+  seq: 11
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/club_network/attendees
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~contactId: 
+  ~contactId[]: 
+  ~contactClubId: 
+  ~contactClubId[]: 
+  ~classEvent: 
+  ~classEvent[]: 
+  ~classEvent.activity: 
+  ~classEvent.activity[]: 
+  ~classEvent.club: 
+  ~state: 
+  ~state[]: 
+  ~classEvent.studio: 
+  ~classEvent.studio[]: 
+  ~attendeeGroup: 
+  ~attendeeGroup[]: 
+  ~classEvent.startedAt[before]: 
+  ~classEvent.startedAt[strictly_before]: 
+  ~classEvent.startedAt[after]: 
+  ~classEvent.startedAt[strictly_after]: 
+  ~classEvent.endedAt[before]: 
+  ~classEvent.endedAt[strictly_before]: 
+  ~classEvent.endedAt[after]: 
+  ~classEvent.endedAt[strictly_after]: 
+  ~order[id]: 
+  ~order[createdAt]: 
+  ~order[state]: 
+  ~order[classEvent.startedAt]: 
+  ~q: 
+  ~accessControlTokenId: 
+  ~hasAttendeeGroup: 
+  ~serviceId: 
+  ~contactId: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

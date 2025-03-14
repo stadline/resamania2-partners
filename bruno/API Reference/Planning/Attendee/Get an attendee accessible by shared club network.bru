@@ -1,0 +1,20 @@
+meta {
+  name: Get an attendee accessible by shared club network
+  type: http
+  seq: 13
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/club_network/attendees/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Get attendance information
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/attendances
+  body: none
+  auth: bearer
+}
+
+params:query {
+  clubId: 
+}
+
+params:path {
+  client_token: 
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}

@@ -1,0 +1,21 @@
+meta {
+  name: ClassEvent Attendance
+  type: http
+  seq: 7
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/class_events/:id/attendance
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  id: 
+  client_token: 
+}

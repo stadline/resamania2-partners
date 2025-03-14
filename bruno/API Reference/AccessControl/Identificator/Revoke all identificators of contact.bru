@@ -1,0 +1,19 @@
+meta {
+  name: Revoke all identificators of contact
+  type: http
+  seq: 10
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/revoke_identificators
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

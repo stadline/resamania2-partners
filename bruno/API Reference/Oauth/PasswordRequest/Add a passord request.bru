@@ -1,0 +1,19 @@
+meta {
+  name: Add a passord request
+  type: http
+  seq: 4
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/password_requests
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

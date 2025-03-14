@@ -1,0 +1,28 @@
+meta {
+  name: Identify sale terms operation
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/identify_sale_terms
+  body: none
+  auth:bearer
+}
+
+params:query {
+  club: 
+  ~club: 
+  ~club[]: 
+  ~withClub: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

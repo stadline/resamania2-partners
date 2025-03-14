@@ -1,0 +1,16 @@
+meta {
+  name: Put Offer quota current value
+  type: http
+  seq: 7
+}
+
+put {
+  url: https://{{host}}/{{environment}}/{{client_token}}/offer_quotas/:id/current_value
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

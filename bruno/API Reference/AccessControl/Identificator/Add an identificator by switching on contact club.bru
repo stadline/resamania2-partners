@@ -1,0 +1,19 @@
+meta {
+  name: Add an identificator by switching on contact club
+  type: http
+  seq: 7
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/migrate_identificators
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

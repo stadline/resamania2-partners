@@ -1,0 +1,26 @@
+meta {
+  name: Return contact information
+  type: http
+  seq: 2
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/real_time_entries/new_entry
+  body: none
+  auth:bearer
+}
+
+params:query {
+  contactId: 
+  ~context: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

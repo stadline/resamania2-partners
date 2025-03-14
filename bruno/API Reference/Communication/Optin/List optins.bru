@@ -1,0 +1,34 @@
+meta {
+  name: List optins
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/optins
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~contactId: 
+  ~contactId[]: 
+  ~type: 
+  ~type[]: 
+  ~channel: 
+  ~channel[]: 
+  ~updatedAt[before]: 
+  ~updatedAt[strictly_before]: 
+  ~updatedAt[after]: 
+  ~updatedAt[strictly_after]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

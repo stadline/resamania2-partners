@@ -1,0 +1,16 @@
+meta {
+  name: Delete an attendee
+  type: http
+  seq: 7
+}
+
+delete {
+  url: https://{{host}}/{{environment}}/{{client_token}}/attendees/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

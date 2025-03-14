@@ -1,0 +1,16 @@
+meta {
+  name: Update ArticleBehavior implementation with debit type
+  type: http
+  seq: 13
+}
+
+put {
+  url: https://{{host}}/{{environment}}/{{client_token}}/sales/:id/debit_type
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

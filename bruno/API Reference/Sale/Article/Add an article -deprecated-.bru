@@ -1,0 +1,19 @@
+meta {
+  name: Add an article -deprecated-
+  type: http
+  seq: 6
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/articles_with_behaviors
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

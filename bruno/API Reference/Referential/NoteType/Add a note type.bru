@@ -1,0 +1,19 @@
+meta {
+  name: Add a note type
+  type: http
+  seq: 2
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/referentials/note_types
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

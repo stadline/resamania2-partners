@@ -1,0 +1,16 @@
+meta {
+  name: Update a commercial relaunch channel
+  type: http
+  seq: 4
+}
+
+put {
+  url: https://{{host}}/{{environment}}/{{client_token}}/referentials/commercial_relaunch_channels/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

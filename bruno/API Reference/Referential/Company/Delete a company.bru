@@ -1,0 +1,16 @@
+meta {
+  name: Delete a company
+  type: http
+  seq: 5
+}
+
+delete {
+  url: https://{{host}}/{{environment}}/{{client_token}}/referentials/companies/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

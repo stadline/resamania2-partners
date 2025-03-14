@@ -1,0 +1,16 @@
+meta {
+  name: Update Sale contact personal informations
+  type: http
+  seq: 22
+}
+
+put {
+  url: https://{{host}}/{{environment}}/{{client_token}}/sales/:id/update_contact
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

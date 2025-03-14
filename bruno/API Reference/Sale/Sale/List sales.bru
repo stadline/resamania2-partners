@@ -1,0 +1,39 @@
+meta {
+  name: List sales
+  type: http
+  seq: 3
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/sales
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~clubId: 
+  ~clubId[]: 
+  ~invoiceId: 
+  ~invoiceId[]: 
+  ~contactId: 
+  ~contactId[]: 
+  ~channel: 
+  ~channel[]: 
+  ~state: 
+  ~state[]: 
+  ~createdAt[before]: 
+  ~createdAt[strictly_before]: 
+  ~createdAt[after]: 
+  ~createdAt[strictly_after]: 
+  ~order[createdAt]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

@@ -1,0 +1,20 @@
+meta {
+  name: Check if sale is valid
+  type: http
+  seq: 10
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/sales/:id/check
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

@@ -1,0 +1,16 @@
+meta {
+  name: Delete a product family without codes
+  type: http
+  seq: 5
+}
+
+delete {
+  url: https://{{host}}/{{environment}}/{{client_token}}/product_families/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

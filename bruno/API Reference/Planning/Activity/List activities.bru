@@ -1,0 +1,29 @@
+meta {
+  name: List activities
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/activities
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~clubId: 
+  ~clubId[]: 
+  ~name: 
+  ~archived: 
+  ~order[name]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

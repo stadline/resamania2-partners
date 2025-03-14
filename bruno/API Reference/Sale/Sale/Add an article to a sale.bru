@@ -1,0 +1,20 @@
+meta {
+  name: Add an article to a sale
+  type: http
+  seq: 9
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/sales/:id/articles
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

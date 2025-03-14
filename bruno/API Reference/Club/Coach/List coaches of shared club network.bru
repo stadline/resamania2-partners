@@ -1,0 +1,30 @@
+meta {
+  name: List coaches of shared club network
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/club_network/coaches
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~givenName: 
+  ~familyName: 
+  ~order[familyName]: 
+  ~order[givenName]: 
+  ~archived: 
+  ~canRunActivity: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

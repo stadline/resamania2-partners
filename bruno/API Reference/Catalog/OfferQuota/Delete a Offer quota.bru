@@ -1,0 +1,16 @@
+meta {
+  name: Delete a Offer quota
+  type: http
+  seq: 6
+}
+
+delete {
+  url: https://{{host}}/{{environment}}/{{client_token}}/offer_quotas/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

@@ -1,0 +1,28 @@
+meta {
+  name: List activity club rules
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/activity_club_rules
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~activityRule.activity: 
+  ~activityRule.activity[]: 
+  ~clubId: 
+  ~clubId[]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

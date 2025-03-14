@@ -1,0 +1,16 @@
+meta {
+  name: Delete late cancel scenario
+  type: http
+  seq: 5
+}
+
+delete {
+  url: https://{{host}}/{{environment}}/{{client_token}}/late_cancel_scenarios/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

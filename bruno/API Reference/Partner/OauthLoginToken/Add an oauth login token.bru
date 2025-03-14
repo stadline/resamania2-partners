@@ -1,0 +1,19 @@
+meta {
+  name: Add an oauth login token
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/oauth_login_tokens
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

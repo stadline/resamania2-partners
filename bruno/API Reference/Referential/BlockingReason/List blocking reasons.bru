@@ -1,0 +1,27 @@
+meta {
+  name: List blocking reasons
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/referentials/blocking_reasons
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~rejectionCode: 
+  ~tag: 
+  ~archived: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

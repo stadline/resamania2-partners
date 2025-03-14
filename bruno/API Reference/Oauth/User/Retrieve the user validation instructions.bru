@@ -1,0 +1,31 @@
+meta {
+  name: Retrieve the user validation instructions
+  type: http
+  seq: 8
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/users_validation
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~givenName: 
+  ~familyName: 
+  ~email: 
+  ~active: 
+  ~role: 
+  ~clubId: 
+  ~q: 
+  ~networkNodeId: 
+  ~archived: 
+}
+
+params:path {
+  client_token: 
+}

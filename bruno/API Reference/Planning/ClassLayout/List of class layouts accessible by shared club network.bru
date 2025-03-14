@@ -1,0 +1,28 @@
+meta {
+  name: List of class layouts accessible by shared club network
+  type: http
+  seq: 5
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/club_network/class_layouts
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~activities: 
+  ~activities[]: 
+  ~order[name]: 
+  ~studios: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

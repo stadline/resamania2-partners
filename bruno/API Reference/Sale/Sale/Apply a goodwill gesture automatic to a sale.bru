@@ -1,0 +1,20 @@
+meta {
+  name: Apply a goodwill gesture automatic to a sale
+  type: http
+  seq: 14
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/sales/:id/goodwill_gesture_automatics
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

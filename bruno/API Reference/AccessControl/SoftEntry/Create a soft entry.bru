@@ -1,0 +1,19 @@
+meta {
+  name: Create a soft entry
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/soft_entries
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

@@ -1,0 +1,17 @@
+meta {
+  name: Update a SaleDocument
+  type: http
+  seq: 4
+}
+
+put {
+  url: https://{{host}}/{{environment}}/{{client_token}}/sale_documents/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  id: 
+  client_token: 
+}

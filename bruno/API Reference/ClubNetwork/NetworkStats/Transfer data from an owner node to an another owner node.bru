@@ -1,0 +1,17 @@
+meta {
+  name: Transfer data from an owner node to an another owner node
+  type: http
+  seq: 2
+}
+
+put {
+  url: https://{{host}}/{{environment}}/{{client_token}}/network_nodes/transfer
+  body: none
+  auth:bearer
+}
+
+params:path {
+  undefined: 
+  undefined: 
+  client_token: 
+}

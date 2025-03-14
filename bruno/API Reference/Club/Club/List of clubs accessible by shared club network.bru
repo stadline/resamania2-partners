@@ -1,0 +1,33 @@
+meta {
+  name: List of clubs accessible by shared club network
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/club_network/clubs
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~clubTags.name: 
+  ~clubTags.name[]: 
+  ~postalCode: 
+  ~postalCode[]: 
+  ~order[name]: 
+  ~disabledProcess: 
+  ~visibility: 
+  ~withResaboxNotification: 
+  ~q: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Add a crossing point
+  type: http
+  seq: 2
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/crossing_points
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Add a Offer quota
+  type: http
+  seq: 3
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/offer_quotas
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

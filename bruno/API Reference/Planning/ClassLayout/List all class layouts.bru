@@ -1,0 +1,28 @@
+meta {
+  name: List all class layouts
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/class_layouts
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~activities: 
+  ~activities[]: 
+  ~order[name]: 
+  ~studios: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

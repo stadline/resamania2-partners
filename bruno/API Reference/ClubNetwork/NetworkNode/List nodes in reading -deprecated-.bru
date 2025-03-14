@@ -1,0 +1,30 @@
+meta {
+  name: List nodes in reading -deprecated-
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/network/nodes
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~clubId: 
+  ~clubId[]: 
+  ~alias: 
+  ~alias[]: 
+  ~name: 
+  ~q: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

@@ -1,0 +1,30 @@
+meta {
+  name: List of showcase activities accessible by shared network
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/club_network/showcase_activities
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~isBookable: 
+  ~activity: 
+  ~activity[]: 
+  ~context: 
+  ~context[]: 
+  ~archived: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

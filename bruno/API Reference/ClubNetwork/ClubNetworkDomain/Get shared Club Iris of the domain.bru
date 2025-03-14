@@ -1,0 +1,26 @@
+meta {
+  name: Get shared Club Iris of the domain
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/club_network_domain/:domain
+  body: none
+  auth:bearer
+}
+
+params:query {
+  clubId: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  domain: 
+  client_token: 
+}

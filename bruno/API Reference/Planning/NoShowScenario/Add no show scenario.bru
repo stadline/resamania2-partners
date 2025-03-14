@@ -1,0 +1,19 @@
+meta {
+  name: Add no show scenario
+  type: http
+  seq: 2
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/no_show_scenarios
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

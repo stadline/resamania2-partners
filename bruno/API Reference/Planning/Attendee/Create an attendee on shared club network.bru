@@ -1,0 +1,19 @@
+meta {
+  name: Create an attendee on shared club network
+  type: http
+  seq: 12
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/club_network/attendees
+  body: none
+  auth:bearer
+}
+
+params:path {
+  client_token: 
+}

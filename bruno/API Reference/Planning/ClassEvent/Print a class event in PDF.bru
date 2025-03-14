@@ -1,0 +1,21 @@
+meta {
+  name: Print a class event in PDF
+  type: http
+  seq: 9
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/class_events/:id/print
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  id: 
+  client_token: 
+}

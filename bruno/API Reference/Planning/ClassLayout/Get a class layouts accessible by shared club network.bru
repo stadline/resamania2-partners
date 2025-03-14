@@ -1,0 +1,20 @@
+meta {
+  name: Get a class layouts accessible by shared club network
+  type: http
+  seq: 6
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/club_network/class_layouts/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

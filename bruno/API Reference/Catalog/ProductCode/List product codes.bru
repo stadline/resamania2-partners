@@ -1,0 +1,33 @@
+meta {
+  name: List product codes
+  type: http
+  seq: 1
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/product_codes
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~name: 
+  ~numberProductAssociated: 
+  ~numberProductAssociated[]: 
+  ~numberProductAssociated[between]: 
+  ~numberProductAssociated[gt]: 
+  ~numberProductAssociated[gte]: 
+  ~numberProductAssociated[lt]: 
+  ~numberProductAssociated[lte]: 
+  ~productFamily: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

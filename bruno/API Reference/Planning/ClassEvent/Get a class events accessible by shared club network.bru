@@ -1,0 +1,20 @@
+meta {
+  name: Get a class events accessible by shared club network
+  type: http
+  seq: 11
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/club_network/class_events/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

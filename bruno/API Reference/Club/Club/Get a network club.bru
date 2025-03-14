@@ -1,0 +1,20 @@
+meta {
+  name: Get a network club
+  type: http
+  seq: 8
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/network/clubs/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

@@ -1,0 +1,16 @@
+meta {
+  name: Delete a class layout
+  type: http
+  seq: 4
+}
+
+delete {
+  url: https://{{host}}/{{environment}}/{{client_token}}/class_layouts/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}

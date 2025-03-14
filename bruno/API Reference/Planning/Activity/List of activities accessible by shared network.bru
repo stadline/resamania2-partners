@@ -1,0 +1,29 @@
+meta {
+  name: List of activities accessible by shared network
+  type: http
+  seq: 6
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/club_network/activities
+  body: none
+  auth:bearer
+}
+
+params:query {
+  ~clubId: 
+  ~clubId[]: 
+  ~name: 
+  ~archived: 
+  ~order[name]: 
+  ~page: 
+  ~itemsPerPage: 
+}
+
+params:path {
+  client_token: 
+}

@@ -1,0 +1,20 @@
+meta {
+  name: Get an attendee
+  type: http
+  seq: 5
+}
+
+auth:bearer {
+  token: {{JwtToken}}
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/attendees/:id
+  body: none
+  auth:bearer
+}
+
+params:path {
+  id: 
+  client_token: 
+}
