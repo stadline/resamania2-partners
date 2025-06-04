@@ -1,0 +1,50 @@
+meta {
+  name: Cursos : Create the product
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/products
+  body: json
+  auth: none
+}
+
+headers {
+  authorization: Bearer {{jwtToken}}
+  x-user-club-id: {{clubId}}
+  x-user-network-node-id: {{networkNodeId}}
+}
+
+body:json {
+  {
+    "type": "subscription",
+    "name": "Cursos product",
+    "description": "",
+    "code": "",
+    "clientTransition": true,
+    "productGroup": null,
+    "productTypeNF": "service",
+    "variant": "course",
+    "productBehaviors": [
+      {
+        "configuration": {
+          "engagementPeriod": "P0M",
+          "validityPeriod": "P2M",
+          "activityIds": [
+            "{{activityId}}"
+          ],
+          "tagName": "cursosaquagym", // see with your client
+          "changeLinkedClub": true,
+          "name": "Cursos product",
+          "periodicity": "month"
+        },
+        "behavior": "/demoapi/behaviors/subscription"
+      }
+    ]
+  }
+}
+
+vars:post-response {
+  productId: res.body?.["@id"]
+}

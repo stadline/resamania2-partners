@@ -1,11 +1,11 @@
 meta {
-  name: retrieve payments checkouts
+  name: retrieve sources
   type: http
-  seq: 11
+  seq: 3
 }
 
 get {
-  url: https://{{host}}/{{environment}}/{{client_token}}/checkouts
+  url: https://{{host}}/{{environment}}/{{client_token}}/referentials/sources
   body: none
   auth: none
 }
@@ -17,5 +17,5 @@ headers {
 }
 
 vars:post-response {
-  checkoutId: res.body["hydra:member"]?.[0]?.["@id"]
+  sourceId: res.body["hydra:member"]?.[0]?.["@id"]
 }

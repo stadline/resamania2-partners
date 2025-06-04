@@ -1,0 +1,21 @@
+meta {
+  name: Retrieve Activities
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/activities
+  body: none
+  auth: none
+}
+
+headers {
+  authorization: Bearer {{jwtToken}}
+  x-user-club-id: {{clubId}}
+  x-user-network-node-id: {{networkNodeId}}
+}
+
+vars:post-response {
+  activityId: res.body["hydra:member"]?.[0]?.["@id"]
+}

@@ -1,0 +1,43 @@
+meta {
+  name: Cursos : Add the offer article to the sale
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://{{host}}/{{environment}}{{client_token}}/articles
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+  x-user-network-node-id: {{networkNodeId}}
+  x-user-club-id: {{clubId}}
+}
+
+body:json {
+  {
+    "parent": null,
+    "offerId": "{{offerId}}",
+    "implementation": {
+      "startDate": "2025-06-04",
+      "recurrenceId": "{{recurrenceId}}"
+    },
+    "repaymentSchedule": {}
+  }
+}
+
+body:multipart-form {
+  grant_type: client_credentials
+  client_id: {{clientId}}
+  client_secret: {{clientSecret}}
+}
+
+vars:post-response {
+  articleId: res.body["hydra:member"]?.[0]?.["@id"]
+}
+
+script:pre-request {
+  bru.setVar('startDate', (new Date()).toISOString().split('T')[0]);
+}

@@ -1,0 +1,34 @@
+meta {
+  name: Cursos : Create the offer
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/products
+  body: json
+  auth: none
+}
+
+headers {
+  authorization: Bearer {{jwtToken}}
+  x-user-club-id: {{clubId}}
+  x-user-network-node-id: {{networkNodeId}}
+}
+
+body:json {
+  {
+    "priceTI": 500,
+    "taxRate": 2000,
+    "name": "Offer Name",
+    "repaymentSchedule": {},
+    "registrationFeeCode": null,
+    "registrationFeeName": null,
+    "context": {},
+    "product": "{{productId}}"
+  }
+}
+
+vars:post-response {
+  offerId: res.body?.["@id"]
+}

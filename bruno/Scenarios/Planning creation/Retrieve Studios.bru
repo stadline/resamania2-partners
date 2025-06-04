@@ -1,0 +1,21 @@
+meta {
+  name: Retrieve Studios
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/studios
+  body: none
+  auth: none
+}
+
+headers {
+  authorization: Bearer {{jwtToken}}
+  x-user-club-id: {{clubId}}
+  x-user-network-node-id: {{networkNodeId}}
+}
+
+vars:post-response {
+  studioId: res.body["hydra:member"]?.[0]?.["@id"]
+}

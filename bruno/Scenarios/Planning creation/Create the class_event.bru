@@ -1,0 +1,37 @@
+meta {
+  name: Create the class_event
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/class_events
+  body: json
+  auth: none
+}
+
+headers {
+  authorization: Bearer {{jwtToken}}
+  x-user-club-id: {{clubId}}
+  x-user-network-node-id: {{networkNodeId}}
+}
+
+body:json {
+  {
+    "classLayout": null,
+    "summary": "summary",
+    "onlineLimit": null,
+    "queueLimit": 5,
+    "endedAt": "2025-06-06T12:00:00+02:00",
+    "externalQuota": null,
+    "activity": "{{activityId}}",
+    "attendingLimit": 10,
+    "startedAt": "2025-06-06T11:00:00.000+02:00",
+    "club": "{{clubId}}",
+    "studio": "{{studioId}}"
+  }
+}
+
+vars:post-response {
+  classEventId: res.body?.["@id"]
+}

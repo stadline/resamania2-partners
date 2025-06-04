@@ -1,0 +1,21 @@
+meta {
+  name: retrieve updated sale informations
+  type: http
+  seq: 11
+}
+
+get {
+  url: https://{{host}}/{{environment}}{{saleId}}
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+  x-user-network-node-id: {{networkNodeId}}
+  x-user-club-id: {{clubId}}
+}
+
+vars:post-response {
+  saleAmount: res.body?.totalTI
+}

@@ -1,0 +1,47 @@
+meta {
+  name: Create the class_event recurrence
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/recurrences
+  body: json
+  auth: none
+}
+
+headers {
+  authorization: Bearer {{jwtToken}}
+  x-user-club-id: {{clubId}}
+  x-user-network-node-id: {{networkNodeId}}
+}
+
+body:json {
+  {
+    "startedAt": "2025-06-05",
+    "endedAt": "2025-08-05",
+    "frequency": "weekly",
+    "day": "th",
+    "excludedDates": [],
+    "extraDates": [],
+    "classEventType": {
+      "queueLimit": 5, // same as the classEvent
+      "activity": "/demoapi/activities/11307", // Same as the classEvent
+      "attendingLimit": 10, // The number of available places
+      "startedAt": "2025-06-05T12:00:00", // same as the classEvent
+      "endedAt": "2025-06-05T13:00:00", // same as the classEvent
+      "club": "{{clubId}}", // same as the classEvent
+      "studio": "{{studioId}}", // same as the classEvent
+      "instructionsComment": null, // same as the classEvent
+      "description": null // same as the classEvent
+    },
+    "classEvents": [
+      "{{classEventId}}" // The most important part : The IRI of the class event you just created
+    ]
+  }
+  
+}
+
+vars:post-response {
+  recurrenceId: res.body?.["@id"]
+}

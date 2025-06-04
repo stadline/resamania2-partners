@@ -1,11 +1,11 @@
 meta {
-  name: retrieve products
+  name: retrieve payments checkouts
   type: http
-  seq: 6
+  seq: 1
 }
 
 get {
-  url: https://{{host}}/{{environment}}/{{client_token}}/products
+  url: https://{{host}}/{{environment}}/{{client_token}}/checkouts
   body: none
   auth: none
 }
@@ -17,6 +17,5 @@ headers {
 }
 
 vars:post-response {
-  productId: res.body["hydra:member"]?.[4]?.["@id"]
-  offerId: res.body["hydra:member"]?.[4]?.["@id"]
+  checkoutId: res.body["hydra:member"]?.[0]?.["@id"]
 }
