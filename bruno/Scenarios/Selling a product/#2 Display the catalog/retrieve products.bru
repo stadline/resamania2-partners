@@ -1,11 +1,11 @@
 meta {
-  name: retrieve updated sale informations
+  name: retrieve products
   type: http
-  seq: 11
+  seq: 1
 }
 
 get {
-  url: https://{{host}}/{{environment}}{{saleId}}
+  url: https://{{host}}/{{environment}}/{{client_token}}/products
   body: none
   auth: none
 }
@@ -17,5 +17,6 @@ headers {
 }
 
 vars:post-response {
-  saleAmount: res.body?.totalTI
+  productId: res.body["hydra:member"]?.[4]?.["@id"]
+  offerId: res.body["hydra:member"]?.[4]?.["@id"]
 }
