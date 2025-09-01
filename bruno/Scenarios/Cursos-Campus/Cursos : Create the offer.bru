@@ -18,13 +18,37 @@ headers {
 
 body:json {
   {
-    "priceTI": 500,
+    "priceTI": 300000,
     "taxRate": 2000,
-    "name": "Offer Name",
+    "name": "Offer name",
     "repaymentSchedule": {},
     "registrationFeeCode": null,
     "registrationFeeName": null,
-    "context": {},
+    "configuration": {
+      "courseSlots": {
+        "slotsCounter": 2,
+        "slotsList": [
+          [
+            {
+              "day": "mo",
+              "time": "10:00:00"
+            },
+            {
+              "day": "we",
+              "time": "10:00:00"
+            }
+          ]
+        ]
+      },
+      "fixedPeriod": {
+        "validFrom": "2025-10-01",
+        "validThrough": "2025-12-31"
+      }
+    },
+    "context": {
+      "contactTagsIncludedExpression": "or",
+      "contactTagsExcludedExpression": "or"
+    },
     "product": "{{productId}}"
   }
 }
