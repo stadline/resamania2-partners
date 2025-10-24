@@ -17,6 +17,6 @@ headers {
 }
 
 vars:post-response {
-  productId: res.body["hydra:member"]?.[4]?.["@id"]
-  offerId: res.body["hydra:member"]?.[4]?.["@id"]
+  productId: res.body["hydra:member"]?.[1]?.["@id"]
+  offerId: res.body["hydra:member"]?.[1]?.offers?.[0]?.["@id"]
 }

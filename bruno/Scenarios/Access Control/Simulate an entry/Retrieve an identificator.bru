@@ -1,0 +1,28 @@
+meta {
+  name: Retrieve an identificator
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/identificators
+  body: none
+  auth: none
+}
+
+params:query {
+  ~contactId: {{contactId}}
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+  x-user-network-node-id: {{networkNodeId}}
+  x-user-club-id: {{clubId}}
+}
+
+vars:post-response {
+  identificatorId: res.body["hydra:member"]?.[0]?.["@id"]
+  identificatorNumber: res.body["hydra:member"]?.[0]?.["number"]
+  identificatorTargetId: res.body["hydra:member"]?.[0]?.["targetId"]
+  identificatorType: res.body["hydra:member"]?.[0]?.["type"]
+}

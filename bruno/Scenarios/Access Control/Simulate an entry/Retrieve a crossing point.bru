@@ -1,0 +1,21 @@
+meta {
+  name: Retrieve a crossing point
+  type: http
+  seq: 4
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/crossing_points
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+  x-user-network-node-id: {{networkNodeId}}
+  x-user-club-id: {{clubId}}
+}
+
+vars:post-response {
+  crossingPointId: res.body["hydra:member"]?.[0]?.["@id"]
+}

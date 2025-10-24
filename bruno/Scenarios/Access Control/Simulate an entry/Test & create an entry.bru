@@ -1,0 +1,46 @@
+meta {
+  name: Test & create an entry
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/soft_entries
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+  x-user-network-node-id: {{networkNodeId}}
+  x-user-club-id: {{clubId}}
+}
+
+body:json {
+  {
+    // You either pass a targetId (contactId)
+    //"targetId":"{{identificatorTargetId}}",
+    
+    // Or an identificatorNumber + identificatorType combo
+    "identificatorNumber" : "{{identificatorNumber}}",
+    "identificatorType" : "{{identificatorType}}",
+    
+    // The crossingPointId is always mandatory
+    "crossingPointId":"{{crossingPointId}}"
+  }
+}
+
+body:multipart-form {
+  grant_type: client_credentials
+  client_id: {{clientId}}
+  client_secret: {{clientSecret}}
+}
+
+vars:post-response {
+  contactId: res.body?.["@id"]
+  contactNumber: res.body?.number
+}
+
+script:pre-request {
+  bru.setVar("fakeEmail", `test+${Math.round(Math.random()*10000)}@gmail.com`);
+}
