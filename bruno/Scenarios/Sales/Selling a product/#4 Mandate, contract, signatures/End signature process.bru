@@ -1,0 +1,30 @@
+meta {
+  name: End signature process
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://{{host}}/{{environment}}{{signatureRequestId}}/transitions
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+  x-user-network-node-id: {{networkNodeId}}
+  x-user-club-id: {{clubId}}
+}
+
+body:json {
+  {
+      "transition": "validate",
+      "code": "12345"
+  }
+}
+
+body:multipart-form {
+  grant_type: client_credentials
+  client_id: {{clientId}}
+  client_secret: {{clientSecret}}
+}

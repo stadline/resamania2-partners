@@ -1,0 +1,23 @@
+meta {
+  name: Retrieve the contract PDF
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://{{host}}/{{environment}}{{saleId}}/contract
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+  x-user-network-node-id: {{networkNodeId}}
+  x-user-club-id: {{clubId}}
+}
+
+body:multipart-form {
+  grant_type: client_credentials
+  client_id: {{clientId}}
+  client_secret: {{clientSecret}}
+}

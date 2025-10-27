@@ -1,0 +1,48 @@
+meta {
+  name: Create a mandate
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/mandates
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+  x-user-network-node-id: {{networkNodeId}}
+  x-user-club-id: {{clubId}}
+}
+
+body:json {
+  {
+      "clubId": "{{clubId}}",
+      "contactId": "{{contactId}}",
+      "contactFamilyName": "Doe",  
+      "contactGivenName": "John",  
+      "contactNumber": "1",  
+      "contactAddress": { 
+          "addressCountry": "France",
+          "addressLocality": "La Madeleine",
+          "postalCode": "59110",
+          "streetAddress": "41 Rue du Général de Gaulle"
+      },
+      "holder": "John Doe",
+      "iban": "DE15843988385047239833",
+      "bic": "DEUTDEFF",
+      "bank": "DEUTSCHE BANK AG",
+      "validFrom": "2019-06-21"
+  }
+}
+
+body:multipart-form {
+  grant_type: client_credentials
+  client_id: {{clientId}}
+  client_secret: {{clientSecret}}
+}
+
+vars:post-response {
+  mandateId: res.body?.["@id"]
+}
