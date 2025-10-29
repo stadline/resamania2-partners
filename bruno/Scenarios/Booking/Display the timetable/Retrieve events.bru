@@ -1,0 +1,35 @@
+meta {
+  name: Retrieve events
+  type: http
+  seq: 5
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/events?startedAt={{startedAt}}&endedAt={{endedAt}}&calendars[]={{studioId}}&calendars[]={{coachId}}&calendars[]={{activityId}}
+  body: none
+  auth: none
+}
+
+params:query {
+  startedAt: {{startedAt}}
+  endedAt: {{endedAt}}
+  calendars[]: {{studioId}}
+  calendars[]: {{coachId}}
+  calendars[]: {{activityId}}
+}
+
+headers {
+  authorization: Bearer {{jwtToken}}
+  x-user-club-id: {{clubId}}
+  x-user-network-node-id: {{networkNodeId}}
+}
+
+vars:post-response {
+  classEventId: res.body["hydra:member"]?.[0]?.["@id"]
+}
+
+script:pre-request {
+  bru.setVar("startedAt", moment().format('YYYY-MM-DDTHH:mm:ss')); 
+  bru.setVar("endedAt", moment().add(7, 'days').format('YYYY-MM-DDTHH:mm:ss')); 
+  
+}
