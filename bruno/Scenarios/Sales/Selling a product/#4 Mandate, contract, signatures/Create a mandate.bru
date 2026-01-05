@@ -12,7 +12,6 @@ post {
 
 headers {
   Authorization: Bearer {{jwtToken}}
-  x-user-network-node-id: {{networkNodeId}}
   x-user-club-id: {{clubId}}
 }
 
@@ -29,6 +28,10 @@ body:json {
           "postalCode": "59110",
           "streetAddress": "41 Rue du Général de Gaulle"
       },
+      "accountName": "John Doe",
+      "type" : "bacs",
+      "accountNumber" : "55779911",
+      "sortCode" : "200000",
       "holder": "John Doe",
       "iban": "DE15843988385047239833",
       "bic": "DEUTDEFF",

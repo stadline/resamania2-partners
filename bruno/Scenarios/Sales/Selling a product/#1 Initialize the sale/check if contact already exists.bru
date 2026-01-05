@@ -1,17 +1,17 @@
 meta {
   name: check if contact already exists
   type: http
-  seq: 5
+  seq: 6
 }
 
 get {
-  url: https://{{host}}/{{environment}}/{{client_token}}/contacts?email={{contactEmail}}
+  url: https://{{host}}/{{environment}}/{{client_token}}/contacts?email={{fakeEmail}}
   body: none
   auth: none
 }
 
 params:query {
-  email: {{contactEmail}}
+  email: {{fakeEmail}}
 }
 
 headers {
@@ -22,4 +22,8 @@ headers {
 
 vars:post-response {
   contactId: res.body["hydra:member"]?.[0]?.["@id"]
+}
+
+script:pre-request {
+  bru.setVar("fakeEmail", `test+${Math.round(Math.random()*10000)}@gmail.com`);
 }

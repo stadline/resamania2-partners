@@ -1,0 +1,23 @@
+meta {
+  name: retrieve network nodes headers
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/network_nodes?clubId={{clubId}}
+  body: none
+  auth: none
+}
+
+params:query {
+  clubId: {{clubId}}
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+}
+
+vars:post-response {
+  networkNodeId: res.body["hydra:member"]?.[0]?.["@id"]
+}

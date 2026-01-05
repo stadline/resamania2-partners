@@ -1,0 +1,27 @@
+meta {
+  name: Book a class
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/attendees
+  body: json
+  auth: none
+}
+
+headers {
+  authorization: Bearer {{jwtToken}}
+  x-user-club-id: {{clubId}}
+  x-user-network-node-id: {{networkNodeId}}
+}
+
+body:json {
+  {
+    
+  }
+}
+
+vars:post-response {
+  classEventId: res.body["hydra:member"]?.[0]?.["@id"]
+}

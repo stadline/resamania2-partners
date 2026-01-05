@@ -1,7 +1,7 @@
 meta {
   name: Create the contact
   type: http
-  seq: 6
+  seq: 7
 }
 
 post {
@@ -12,7 +12,6 @@ post {
 
 headers {
   Authorization: Bearer {{jwtToken}}
-  x-user-network-node-id: {{networkNodeId}}
   x-user-club-id: {{clubId}}
 }
 
@@ -24,7 +23,7 @@ body:json {
     "birthDate":"2000-01-01",
     "email": "{{fakeEmail}}",
     "mobile":"+33626082779",
-    "sourceId": "{{sourceId}}",
+   //"sourceId": "{{sourceId}}",
     "address": {
       "addressCountry":"France",
       "addressLocality":"Toulon",
