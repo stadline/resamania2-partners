@@ -3,10 +3,13 @@ vars {
   client_token: {{process.env.LOCAL_CLIENT_TOKEN}}
   environment: {{process.env.LOCAL_ENVIRONMENT}}
   apiKey: {{process.env.LOCAL_API_KEY}}
+  grantType: {{process.env.LOCAL_GRANT_TYPE}}
   clientId: {{process.env.LOCAL_CLIENT_ID}}
   clientSecret: {{process.env.LOCAL_CLIENT_SECRET}}
-  userNetworkNodeId: {{process.env.LOCAL_USER_NETWORK_NODE_ID}}
-  userClubId: {{process.env.LOCAL_USER_CLUB_ID}}
+  authClubId: {{process.env.LOCAL_AUTH_CLUB_ID}}
+  authContactEmail: {{process.env.LOCAL_AUTH_CONTACT_EMAIL}}
+  userNetworkNodeId: null
+  userClubId: null
   JwtToken: 
   JwtTokenExpiresAt: 
   CredentialsHash: 
