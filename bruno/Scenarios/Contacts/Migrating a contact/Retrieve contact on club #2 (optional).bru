@@ -1,0 +1,27 @@
+meta {
+  name: Retrieve contact on club #2 (optional)
+  type: http
+  seq: 6
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{resultTargetId}}
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+  x-user-network-node-id: {{clubTwoNetworkNodeId}}
+  x-user-club-id: {{clubTwoId}}
+}
+
+body:multipart-form {
+  grant_type: client_credentials
+  client_id: {{clientId}}
+  client_secret: {{clientSecret}}
+}
+
+vars:post-response {
+  contactId: res.body?.["@id"]
+}

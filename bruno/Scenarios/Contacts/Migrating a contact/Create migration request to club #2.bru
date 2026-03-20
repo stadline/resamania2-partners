@@ -1,0 +1,38 @@
+meta {
+  name: Create migration request to club #2
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/contact_migration_requests
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+  x-user-club-id: {{clubOneId}}
+  x-user-network-node-id: {{clubOneNetworkNodeId}}
+}
+
+body:json {
+  {
+    "contactId":"{{contactId}}",
+    "clubId":"{{clubTwoId}}"
+  }
+}
+
+body:multipart-form {
+  grant_type: client_credentials
+  client_id: {{clientId}}
+  client_secret: {{clientSecret}}
+}
+
+vars:post-response {
+  contactMigrationRequestId: res.body?.["@id"]
+}
+
+script:pre-request {
+  bru.setVar("fakeEmail", `test+${Math.round(Math.random()*10000)}@gmail.com`);
+}

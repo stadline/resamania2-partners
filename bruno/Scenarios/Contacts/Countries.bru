@@ -1,7 +1,7 @@
 meta {
-  name: Create a contact
+  name: Countries
   type: http
-  seq: 4
+  seq: 5
 }
 
 post {
@@ -16,22 +16,7 @@ headers {
 }
 
 body:json {
-  {
-    "familyName":"DEV",
-    "givenName":"Test",
-    "gender":"male",
-    "clubId": "{{clubId}}",
-    "birthDate":"2000-01-01",
-    "email": "{{fakeEmail}}",
-    "mobile":"+33626082779",
-   //"sourceId": "{{sourceId}}",
-    "address": {
-      "addressCountry":"Espagne",
-      "addressLocality":"Toulon",
-      "streetAddress":"52 chemin du test",
-      "postalCode":"83390"
-    }
-  }
+  { "givenName": "Aimee Marie", "familyName": "Aimee Marie", "email": "aimeemckessy+g6@yahoo.co.uk", "mobile": "+447463806859", "gender": "male", "birthDate": "1990-01-01", "state": "prospect", "isContactCreating": true, "clubId": "/demoapimono/clubs/1423", "address": { "addressCountryIso": "GB", "streetAddress": "Morningside Drive, Didsbury", "postalCode": "M20 5WZ", "addressLocality": "Manchester" } }
 }
 
 body:multipart-form {

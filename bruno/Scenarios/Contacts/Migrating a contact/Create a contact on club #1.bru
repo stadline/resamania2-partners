@@ -1,7 +1,7 @@
 meta {
-  name: Create a contact
+  name: Create a contact on club #1
   type: http
-  seq: 4
+  seq: 3
 }
 
 post {
@@ -12,7 +12,8 @@ post {
 
 headers {
   Authorization: Bearer {{jwtToken}}
-  ~x-user-club-id: {{clubId}}
+  x-user-network-node-id: {{clubOneNetworkNodeId}}
+  x-user-club-id: {{clubOneId}}
 }
 
 body:json {
@@ -20,13 +21,13 @@ body:json {
     "familyName":"DEV",
     "givenName":"Test",
     "gender":"male",
-    "clubId": "{{clubId}}",
+    "clubId": "{{clubOneId}}",
     "birthDate":"2000-01-01",
     "email": "{{fakeEmail}}",
     "mobile":"+33626082779",
    //"sourceId": "{{sourceId}}",
     "address": {
-      "addressCountry":"Espagne",
+      "addressCountry":"France",
       "addressLocality":"Toulon",
       "streetAddress":"52 chemin du test",
       "postalCode":"83390"
@@ -46,5 +47,5 @@ vars:post-response {
 }
 
 script:pre-request {
-  bru.setVar("fakeEmail", `test+${Math.round(Math.random()*10000)}@gmail.com`);
+  bru.setVar("fakeEmail", `gym-test+${Math.round(Math.random()*10000)}@gmail.com`);
 }

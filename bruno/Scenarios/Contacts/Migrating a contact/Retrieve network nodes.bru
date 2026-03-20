@@ -1,0 +1,35 @@
+meta {
+  name: Retrieve network nodes
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/network_nodes
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{jwtToken}}
+}
+
+script:post-response {
+  const clubs = (res.body?.["hydra:member"] ?? []).filter(node => node?.type === "club" && node?.parent);
+  const parentCounts = clubs.reduce((accumulator, node) => {
+    accumulator.set(node.parent, (accumulator.get(node.parent) ?? 0) + 1);
+    return accumulator;
+  }, new Map());
+
+  const masterParent = clubs.find(node => (parentCounts.get(node.parent) ?? 0) >= 2)?.parent ?? null;
+  const clubsFromMasterParent = clubs
+    .filter(node => node.parent === masterParent);
+  const clubOne = clubsFromMasterParent[0] ?? null;
+  const clubTwo = clubsFromMasterParent[1] ?? null;
+
+  bru.setVar("masterNetworkNode", masterParent);
+  bru.setVar("clubOneId", clubOne?.clubId ?? null);
+  bru.setVar("clubOneNetworkNodeId", clubOne?.["@id"] ?? null);
+  bru.setVar("clubTwoId", clubTwo?.clubId ?? null);
+  bru.setVar("clubTwoNetworkNodeId", clubTwo?.["@id"] ?? null);
+}
