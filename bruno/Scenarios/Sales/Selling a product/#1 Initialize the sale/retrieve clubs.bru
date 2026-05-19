@@ -5,7 +5,7 @@ meta {
 }
 
 get {
-  url: https://{{host}}/{{environment}}/{{client_token}}/network_nodes
+  url: https://{{host}}/{{environment}}/{{client_token}}/clubs
   body: none
   auth: none
 }
@@ -15,6 +15,5 @@ headers {
 }
 
 vars:post-response {
-  networkNodeId: res.body["hydra:member"]?.[8]?.["@id"]
-  clubId: res.body["hydra:member"]?.[8]?.["clubId"]
+  clubId: res.body["hydra:member"]?.[0]?.["@id"]
 }
