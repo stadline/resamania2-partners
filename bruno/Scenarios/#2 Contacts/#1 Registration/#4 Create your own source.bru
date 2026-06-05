@@ -1,0 +1,27 @@
+meta {
+  name: #4 Create your own source
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/referentials/sources
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name" : "My super app"
+  }
+}
+
+body:multipart-form {
+  grant_type: client_credentials
+  client_id: {{clientId}}
+  client_secret: {{clientSecret}}
+}
+
+vars:post-response {
+  sourceId: res.body?.["@id"]
+}

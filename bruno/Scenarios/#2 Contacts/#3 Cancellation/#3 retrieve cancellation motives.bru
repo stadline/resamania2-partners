@@ -1,0 +1,15 @@
+meta {
+  name: #3 retrieve cancellation motives
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/referentials/cancellation_motives
+  body: none
+  auth: none
+}
+
+vars:post-response {
+  cancellationMotiveId: res.body["hydra:member"]?.[0]?.["@id"]
+}

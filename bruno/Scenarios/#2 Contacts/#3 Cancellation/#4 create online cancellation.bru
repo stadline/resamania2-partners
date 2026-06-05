@@ -1,0 +1,25 @@
+meta {
+  name: #4 create online cancellation
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{subscriptionId}}/online_cancellation
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "cancellationDate": "{{subscriptionEngagedThrough}}",
+    "cancellationMotiveId": "{{cancellationMotiveId}}"
+  }
+  
+}
+
+docs {
+  For details of the various error codes that may be returned, please refer to the online documentation.
+  
+  The cancellation date (`cancellationDate`) depends on several factors: it must not be earlier than the subscription start date (`subscription.engagedThrough`) and must also be later than the `noticePeriod` (added to the today's date)
+}

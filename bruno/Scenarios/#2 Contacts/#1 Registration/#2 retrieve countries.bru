@@ -1,0 +1,30 @@
+meta {
+  name: #2 retrieve countries
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/countries
+  body: none
+  auth: none
+}
+
+body:json {
+  
+  
+}
+
+body:multipart-form {
+  grant_type: client_credentials
+  client_id: {{clientId}}
+  client_secret: {{clientSecret}}
+}
+
+vars:post-response {
+  countryId: res.body?.["@id"]
+}
+
+script:pre-request {
+  bru.setVar("fakeEmail", `test+${Math.round(Math.random()*10000)}@gmail.com`);
+}

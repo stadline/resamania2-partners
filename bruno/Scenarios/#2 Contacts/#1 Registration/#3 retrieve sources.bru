@@ -1,0 +1,23 @@
+meta {
+  name: #3 retrieve sources
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/referentials/sources
+  body: none
+  auth: none
+}
+
+vars:post-response {
+  sourceId: res.body["hydra:member"]?.[0]?.["@id"]
+}
+
+docs {
+  The purpose of retrieving the `sources` is to populate the `sourceId` when creating the contact.
+  
+  The source is the user's provenance.
+  
+  You can create your own source (`POST /sources` to specify that this contact comes from your application.)
+}

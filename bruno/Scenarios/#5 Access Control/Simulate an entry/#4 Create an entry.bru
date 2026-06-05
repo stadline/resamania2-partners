@@ -1,0 +1,46 @@
+meta {
+  name: #4 Create an entry
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://{{host}}/{{environment}}/{{client_token}}/soft_entries
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    // You either pass a targetId (contactId)
+    //"targetId":"{{identificatorTargetId}}",
+    
+    // Or an identificatorNumber + identificatorType combo
+    "identificatorNumber" : "{{identificatorNumber}}",
+    "identificatorType" : "{{identificatorType}}",
+    
+    // The crossingPointId is always mandatory
+    "crossingPointId":"{{crossingPointId}}"
+  }
+}
+
+body:multipart-form {
+  grant_type: client_credentials
+  client_id: {{clientId}}
+  client_secret: {{clientSecret}}
+}
+
+vars:post-response {
+  contactId: res.body?.["@id"]
+  contactNumber: res.body?.number
+}
+
+script:pre-request {
+  bru.setVar("fakeEmail", `test+${Math.round(Math.random()*10000)}@gmail.com`);
+}
+
+docs {
+  This request records a passage through the access control point by checking the access rules.
+  
+  If the input data is correct but the user is denied access, you will still receive a 201 response (the `entry` has indeed been created), but the `isBlocking` property will be set to `true`.
+}
