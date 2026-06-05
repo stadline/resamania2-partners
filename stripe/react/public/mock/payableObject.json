@@ -1,43 +1,33 @@
 {
-  "@context": "/.../contexts/PayableObject",
-  "@id": "/.../payable_objects/13308",
+  "@context": "/onairespana/contexts/PayableObject",
+  "@id": "/onairespana/payable_objects/16214",
   "@type": "PayableObject",
-  "id": 13308,
-  "contactId": "/.../contacts/2950313",
-  "amount": 100,
+  "id": 16214,
+  "contactId": "/onairespana/contacts/2974386",
+  "amount": 3000,
   "currency": "EUR",
   "redirectUrl": "",
-  "token": "pi_3Q11v3PqBuM1Ivvu2st6rwrq_secret_LEwVayBuaqE21VPIWl5i60nJa",
-  "externalReference": "pi_3Q11v3PqBuM1Ivvu2st6rwrq",
-  "clubId": "/.../clubs/1341",
-  "clubCode": "SAN",
-  "checkout": "/.../checkouts/1304",
-  "webWallet": {
-    "@id": "/.../web_wallets/76119",
-    "@type": "WebWallet",
-    "useInRejects": false,
-    "token": "seti_1PucFpPqBuM1Ivvu8PrwJuR5_secret_QmAbnXW4vqCYlZ6VX4mYmSIDibYWOF6"
-  },
+  "token": "pi_3Teaq6PqBuM1Ivvu07sl1YqY_secret_My3qrzgoI6PzbcdbvNNlzvktN",
+  "externalReference": "pi_3Teaq6PqBuM1Ivvu07sl1YqY",
+  "clubId": "/onairespana/clubs/1435",
+  "clubCode": "BAR",
+  "checkout": "/onairespana/checkouts/1402",
+  "webWallet": null,
   "payableObjects": {
     "sales": [
-      "/.../sales/3545520"
+      "/onairespana/sales/3562572"
     ]
   },
   "webRedirectUrl": null,
+  "cancelUrl": "https://cancel.url",
+  "validUrl": "https://valid.url",
+  "widgetUrl": null,
   "state": "requested",
-  "logs": [
-    "requires_payment_method : ",
-    "State: requires_payment_method / paymentMethod: ",
-    "Unknown state : requires_payment_method",
-    "State: requires_payment_method / paymentMethod: ",
-    "Unknown state : requires_payment_method",
-    "State: requires_payment_method / paymentMethod: ",
-    "Unknown state : requires_payment_method"
-  ],
+  "logs": [],
   "payment": null,
   "useAvailableAmount": false,
-  "createdAt": "2024-09-20T10:10:24",
-  "createdBy": "Jessy Lenne <jessy.lenne@stadline.com>",
+  "createdAt": "2026-06-04T14:57:38",
+  "createdBy": "Sedadi - OnAir",
   "canceledAt": null,
   "canceledBy": null
 }

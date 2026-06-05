@@ -10,12 +10,6 @@ get {
   auth: none
 }
 
-headers {
-  Authorization: Bearer {{jwtToken}}
-  x-user-network-node-id: {{networkNodeId}}
-  x-user-club-id: {{clubId}}
-}
-
 vars:post-response {
   productId: res.body["hydra:member"]?.[1]?.["@id"]
   offerId: res.body["hydra:member"]?.[1]?.offers?.[0]?.["@id"]

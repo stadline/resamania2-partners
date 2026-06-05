@@ -1,7 +1,7 @@
 meta {
-  name: auth (client_credentials)
+  name: auth
   type: http
-  seq: 1
+  seq: 9
 }
 
 post {
@@ -18,12 +18,14 @@ body:multipart-form {
   ~email: {{authContactEmail}}
 }
 
-vars:post-response {
-  JwtToken: res.body["access_token"]
-}
-
 script:post-response {
   const moment = require('moment');
   bru.setVar("jwtToken", res.body.access_token);
   bru.setVar("jwtTokenExpiresAt", moment().add(res.body.expires_in, 'seconds').format());
+}
+
+docs {
+  This Bruno collection does not require authentication; it is managed automatically by the pre-request scripts on the collection.
+  
+  This request is for illustrative purposes only; it requires that you have correctly set the environment variables in `.env` and selected the correct values in the `body` for it to work.
 }

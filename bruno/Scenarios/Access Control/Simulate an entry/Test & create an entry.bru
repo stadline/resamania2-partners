@@ -10,12 +10,6 @@ post {
   auth: none
 }
 
-headers {
-  Authorization: Bearer {{jwtToken}}
-  x-user-network-node-id: {{networkNodeId}}
-  x-user-club-id: {{clubId}}
-}
-
 body:json {
   {
     // You either pass a targetId (contactId)
@@ -43,4 +37,10 @@ vars:post-response {
 
 script:pre-request {
   bru.setVar("fakeEmail", `test+${Math.round(Math.random()*10000)}@gmail.com`);
+}
+
+docs {
+  This request records a passage through the access control point by checking the access rules.
+  
+  If the input data is correct but the user is denied access, you will still receive a 201 response (the `entry` has indeed been created), but the `isBlocking` property will be set to `true`.
 }

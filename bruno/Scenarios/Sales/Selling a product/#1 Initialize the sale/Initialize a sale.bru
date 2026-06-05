@@ -1,18 +1,13 @@
 meta {
   name: Initialize a sale
   type: http
-  seq: 8
+  seq: 7
 }
 
 post {
   url: https://{{host}}/{{environment}}/{{client_token}}/sales
   body: json
   auth: none
-}
-
-headers {
-  Authorization: Bearer {{jwtToken}}
-  x-user-club-id: {{clubId}}
 }
 
 body:json {
@@ -25,6 +20,7 @@ body:json {
     "clubCode": "{{clubCode}}",
     "address": {
       "addressCountry":"France",
+      "addressCountryISo":"FR",
       "addressLocality":"Toulon",
       "streetAddress":"52 chemin du test",
       "postalCode":"83390"

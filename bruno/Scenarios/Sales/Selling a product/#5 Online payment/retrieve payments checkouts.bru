@@ -5,17 +5,11 @@ meta {
 }
 
 get {
-  url: https://{{host}}/{{environment}}/{{client_token}}/checkouts
+  url: https://{{host}}/{{environment}}/{{client_token}}/checkouts/1402
   body: none
   auth: none
 }
 
-headers {
-  Authorization: Bearer {{jwtToken}}
-  x-user-network-node-id: {{networkNodeId}}
-  x-user-club-id: {{clubId}}
-}
-
 vars:post-response {
-  checkoutId: res.body["hydra:member"]?.[0]?.["@id"]
+  checkoutId: res.body["hydra:member"]?.[2]?.["@id"]
 }

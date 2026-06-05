@@ -1,7 +1,7 @@
 meta {
   name: check if contact already exists
   type: http
-  seq: 2
+  seq: 1
 }
 
 get {
@@ -14,12 +14,12 @@ params:query {
   email: {{contactEmail}}
 }
 
-headers {
-  Authorization: Bearer {{jwtToken}}
-  x-user-network-node-id: {{networkNodeId}}
-  x-user-club-id: {{clubId}}
-}
-
 vars:post-response {
   contactId: res.body["hydra:member"]?.[0]?.["@id"]
+}
+
+docs {
+  To check if a contact already exists, the best way to go is to find him by his email, it's the unique identifier in Resamania.
+  
+  The request is club-scoped : It will search for the contact in this club, and this club only.
 }

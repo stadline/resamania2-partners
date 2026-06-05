@@ -1,18 +1,13 @@
 meta {
   name: Create the contact
   type: http
-  seq: 7
+  seq: 6
 }
 
 post {
   url: https://{{host}}/{{environment}}/{{client_token}}/contacts
   body: json
   auth: none
-}
-
-headers {
-  Authorization: Bearer {{jwtToken}}
-  x-user-club-id: {{clubId}}
 }
 
 body:json {

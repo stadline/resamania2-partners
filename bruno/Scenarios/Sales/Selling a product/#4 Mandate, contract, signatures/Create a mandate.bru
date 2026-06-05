@@ -10,11 +10,6 @@ post {
   auth: none
 }
 
-headers {
-  Authorization: Bearer {{jwtToken}}
-  x-user-club-id: {{clubId}}
-}
-
 body:json {
   {
       "clubId": "{{clubId}}",
@@ -24,12 +19,13 @@ body:json {
       "contactNumber": "1",  
       "contactAddress": { 
           "addressCountry": "France",
+          "addressCountryIso": "FR",
           "addressLocality": "La Madeleine",
           "postalCode": "59110",
           "streetAddress": "41 Rue du Général de Gaulle"
       },
       "accountName": "John Doe",
-      "type" : "bacs",
+      "type" : "sepa", // sepa | bacs
       "accountNumber" : "55779911",
       "sortCode" : "200000",
       "holder": "John Doe",

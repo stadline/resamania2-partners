@@ -1,7 +1,7 @@
 meta {
   name: check if contact already exists
   type: http
-  seq: 6
+  seq: 5
 }
 
 get {
@@ -12,12 +12,6 @@ get {
 
 params:query {
   email: {{fakeEmail}}
-}
-
-headers {
-  Authorization: Bearer {{jwtToken}}
-  x-user-network-node-id: {{networkNodeId}}
-  x-user-club-id: {{clubId}}
 }
 
 vars:post-response {

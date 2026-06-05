@@ -1,8 +1,8 @@
 headers {
   X-Gravitee-Api-Key: {{apiKey}}
   x-user-club-id: {{userClubId}}
-  Authorization: {{JwtToken}}
-  ~x-user-network-node-id: {{userNetworkNodeId}}
+  Authorization: Bearer {{JwtToken}}
+  x-user-network-node-id: {{userNetworkNodeId}}
 }
 
 script:pre-request {
@@ -83,6 +83,7 @@ script:pre-request {
   if (authGrantType == 'http://clubclientcredentials' || authGrantType == 'http://contactclientcredentials') {
     bru.setEnvVar('userClubId', null);
     bru.setEnvVar('userNetworkNodeId', null);
+    req.deleteHeader('x-user-network-node-id');
   }
 }
 

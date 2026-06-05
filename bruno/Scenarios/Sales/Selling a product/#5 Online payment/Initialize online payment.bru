@@ -10,12 +10,6 @@ post {
   auth: none
 }
 
-headers {
-  Authorization: Bearer {{jwtToken}}
-  x-user-network-node-id: {{networkNodeId}}
-  x-user-club-id: {{clubId}}
-}
-
 body:json {
   {
     "contactId": "{{contactId}}",
@@ -27,6 +21,7 @@ body:json {
     "payableObjects":{
       "sales":[
         "{{saleId}}"
+        
       ]
     },
     "useAvailableAmount": false,

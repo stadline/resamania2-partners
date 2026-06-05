@@ -10,11 +10,6 @@ post {
   auth: none
 }
 
-headers {
-  Authorization: Bearer {{jwtToken}}
-  x-user-club-id: {{clubId}}
-}
-
 body:json {
   {
     "offerId": "{{offerId}}",

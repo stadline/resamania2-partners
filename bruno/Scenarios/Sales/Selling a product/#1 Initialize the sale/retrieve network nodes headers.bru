@@ -14,10 +14,6 @@ params:query {
   clubId: {{clubId}}
 }
 
-headers {
-  Authorization: Bearer {{jwtToken}}
-}
-
 vars:post-response {
   networkNodeId: res.body["hydra:member"]?.[0]?.["@id"]
 }

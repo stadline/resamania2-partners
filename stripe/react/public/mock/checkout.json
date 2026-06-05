@@ -1,25 +1,29 @@
 {
-  "@context": "/.../contexts/Checkout",
-  "@id": "/.../checkouts/1304",
+  "@context": "/onairespana/contexts/Checkout",
+  "@id": "/onairespana/checkouts/1402",
   "@type": "Checkout",
-  "clubId": "/.../clubs/1341",
-  "clubCode": "SAN",
+  "clubId": "/onairespana/clubs/1435",
+  "clubCode": "BAR",
   "name": "Caisse Principale",
   "alertLimitMin": null,
   "alertEmail": null,
-  "createdAt": "2023-08-30T11:34:13",
-  "createdBy": "Consumer",
+  "createdAt": "2026-03-23T09:42:09",
+  "createdBy": "Consumer 2025-11-07",
   "deletedAt": null,
   "deletedBy": null,
   "totalCashAmount": 0,
   "webPaymentProviderType": "stripe",
+  "useCardInRejects": "default_off",
+  "currency": "EUR",
   "paymentProviderConfiguration": {
-    "@id": "/.../stripe_configurations/2163",
+    "@id": "/onairespana/stripe_configurations/2286",
     "@type": "StripeConfiguration",
     "publicKey": "pk_test_51JX5Z4LanmA9Pcv3vDu2043dRuCkx37QkgdctiqP12diCbktLMYQ7PWVu5ooTK5ZRixS7faHz0cC5YZcg8fuXOvw00GyNEVpdp",
     "accountId": "acct_1KMvhJPqBuM1Ivvu"
   },
-  "useCardInRejects": "default_off",
-  "currency": "EUR",
-  "theoreticalCheckoutAmount": 5346
+  "webPaymentProviderCapabilities": {
+    "supportsWebWallet": true,
+    "supportsPaymentPage": false
+  },
+  "theoreticalCheckoutAmount": 0
 }

@@ -4,17 +4,17 @@ meta {
   seq: 5
 }
 
+get {
+  url: https://{{host}}/{{environment}}/{{client_token}}/sales/3562572
+  body: none
+  auth: bearer
+}
+
 auth:bearer {
   token: {{JwtToken}}
 }
 
-get {
-  url: https://{{host}}/{{environment}}/{{client_token}}/sales/:id
-  body: none
-  auth:bearer
-}
-
-params:path {
-  id: 
-  client_token: 
+vars:post-response {
+  saleId: res.body?.["@id"]
+  saleAmount: res.body?.totalTI
 }

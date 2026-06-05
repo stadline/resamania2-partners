@@ -10,11 +10,6 @@ post {
   auth: none
 }
 
-headers {
-  Authorization: Bearer {{jwtToken}}
-  ~x-user-club-id: {{clubId}}
-}
-
 body:json {
   {
     "familyName":"DEV",
@@ -26,7 +21,8 @@ body:json {
     "mobile":"+33626082779",
    //"sourceId": "{{sourceId}}",
     "address": {
-      "addressCountry":"Espagne",
+      "addressCountryCode":"FR",
+      "addressCountry":"France",
       "addressLocality":"Toulon",
       "streetAddress":"52 chemin du test",
       "postalCode":"83390"
