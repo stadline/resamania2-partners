@@ -64,6 +64,7 @@ script:pre-request {
         );
       })();
   
+      console.log('auto-authentication successful', res.data);
       bru.setVar("JwtToken", res.data.access_token);
       bru.setVar("JwtTokenExpiresAt", moment().add(res.data.expires_in, 'seconds').format());
       bru.setVar("CredentialsHash", hashCredentials);
